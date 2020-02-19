@@ -14,6 +14,7 @@ import com.facebook.ads.AdView;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
+import com.google.android.gms.ads.MobileAds;
 
 public class FacebookAdvertiseManager {
 
@@ -23,6 +24,9 @@ public class FacebookAdvertiseManager {
 
     public FacebookAdvertiseManager(Context context) {
         this.context =  context;
+    }
+
+    public static void InitializeFacebookSdk(Context context ) {
         AudienceNetworkAds.initialize(context);
     }
 
@@ -38,10 +42,7 @@ public class FacebookAdvertiseManager {
 
         bannerAdView.loadAd();
     }
-
-    public InterstitialAd loadInterstatial (final Boolean isReloadOnClosed, final String interStastitialId , final Intent nextActivity){
-       final InterstitialAd interstitialAd = new InterstitialAd(context, interStastitialId);
-        // Set listeners for the Interstitial Ad
+    private  void setAdListner (final InterstitialAd interstitialAd,final Boolean isSplashScreen,final Boolean isReloadOnClosed,final Intent nextActivity){
         interstitialAd.setAdListener(new InterstitialAdListener() {
             @Override
             public void onInterstitialDisplayed(Ad ad) {
@@ -60,11 +61,18 @@ public class FacebookAdvertiseManager {
 
             @Override
             public void onError(Ad ad, AdError adError) {
+                if(isSplashScreen){
+                    context.startActivity(nextActivity);
+                    ((Activity) context).finish();
+                    return;
+                }
                 interstitialAd.loadAd();
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
+                if(isSplashScreen)
+                    interstitialAd.show();
             }
 
             @Override
@@ -76,9 +84,16 @@ public class FacebookAdvertiseManager {
             public void onLoggingImpression(Ad ad) {
             }
         });
-
-        // For auto play video ads, it's recommended to load the ad
-        // at least 30 seconds before it is shown
+    }
+    public InterstitialAd loadInterstatial (final Boolean isReloadOnClosed, final String interStastitialId , final Intent nextActivity){
+       final InterstitialAd interstitialAd = new InterstitialAd(context, interStastitialId);
+       setAdListner(interstitialAd,false,isReloadOnClosed,nextActivity);
+        interstitialAd.loadAd();
+        return  interstitialAd;
+    }
+    public InterstitialAd showSplashInterstatial (final Boolean isReloadOnClosed, final String interStastitialId , final Intent nextActivity){
+        final InterstitialAd interstitialAd = new InterstitialAd(context, interStastitialId);
+        setAdListner(interstitialAd,true,isReloadOnClosed,nextActivity);
         interstitialAd.loadAd();
         return  interstitialAd;
     }

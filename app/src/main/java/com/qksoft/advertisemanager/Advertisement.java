@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.widget.LinearLayout;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -27,9 +29,9 @@ import com.google.android.gms.ads.MobileAds;
         this.context = context;
     }
 
-     void initializeAdmobSdk(String appId) {
-        MobileAds.initialize(context, appId);
-    }
+    public static void InitializeAdmobSdk(Context context , String appId) {
+         MobileAds.initialize(context, appId);
+     }
 
      public AdRequest requestAd(){
          return new AdRequest.Builder().build();
@@ -54,7 +56,7 @@ import com.google.android.gms.ads.MobileAds;
          return  mInterstitialAd;
      }
 
-     public InterstitialAd loadSplashInterstatial( Boolean isReloadOnClosed,String interStastitialId , Intent nextActivity){
+     public InterstitialAd showSplashInterstatial(@NonNull Boolean isReloadOnClosed, @NonNull String interStastitialId , @NonNull Intent nextActivity){
          InterstitialAd mInterstitialAd = generateInterstatial(interStastitialId);
          setAdlistner(mInterstitialAd,true,false, interStastitialId, nextActivity );
          return mInterstitialAd;

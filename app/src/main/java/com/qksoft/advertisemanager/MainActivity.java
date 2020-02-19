@@ -38,11 +38,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /**
-         * Set Up Advertising Sdk
-         */
+
         Advertisement advertisement = new Advertisement(MainActivity.this);
-        advertisement.initializeAdmobSdk(appId);
 
         FacebookAdvertiseManager facebookAdvertiseManager = new FacebookAdvertiseManager(MainActivity.this);
 
@@ -51,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout adContainer = findViewById(R.id.linerLayout);
 
        advertisement.addBannerToLinearLayout(AdSize.LARGE_BANNER, test_Banner_Id, adContainer);
+
  //       facebookAdvertiseManager.addBannerToLinearLayout(AdSize.BANNER_HEIGHT_90,facebook_Test_id,adContainer);
+
         final com.facebook.ads.InterstitialAd facebookInterstatial = facebookAdvertiseManager.loadInterstatial(false,facebook_Test_id,new Intent(MainActivity.this,MainActivity.class));
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
