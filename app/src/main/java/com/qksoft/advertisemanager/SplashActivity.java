@@ -14,6 +14,12 @@ public class SplashActivity extends AppCompatActivity {
     String appId = "ca-app-pub-4906547187531410~1017165400";
     String test_Interstatial_Id = "ca-app-pub-3940256099942544/1033173712";
     String facebook_Test_id = "IMG_16_9_LINK#YOUR_PLACEMENT_ID";
+    String native_test_id = "ca-app-pub-3940256099942544/2247696110";
+
+
+
+
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
