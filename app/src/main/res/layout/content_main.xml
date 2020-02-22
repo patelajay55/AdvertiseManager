@@ -26,12 +26,23 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/showfacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Show Facebook Interstatial"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/showadmob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Show Admob Interstatial"
+        app:layout_constraintEnd_toEndOf="@+id/showfacebook"
+        app:layout_constraintStart_toStartOf="@+id/showfacebook"
+        app:layout_constraintTop_toBottomOf="@+id/showfacebook" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

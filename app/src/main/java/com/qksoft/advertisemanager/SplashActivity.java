@@ -4,17 +4,15 @@ package com.qksoft.advertisemanager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Space;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.qksoft.advertisemanager.admob.InitializeAdmobSdk;
-import com.qksoft.advertisemanager.admob.ShowAdmobSplashInterstatial;
-import com.qksoft.advertisemanager.facebook.FacebookAdvertiseManager;
+
 import com.qksoft.advertisemanager.facebook.InitiaizeFacebookSdk;
 import com.qksoft.advertisemanager.facebook.ShowFacebookSplashInterstatial;
 
-import static com.qksoft.advertisemanager.facebook.FacebookAdvertiseManager.InitializeFacebookSdk;
+
 
 public class SplashActivity extends AppCompatActivity {
 
