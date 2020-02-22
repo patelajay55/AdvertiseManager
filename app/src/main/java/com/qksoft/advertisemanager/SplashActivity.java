@@ -1,13 +1,20 @@
 package com.qksoft.advertisemanager;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Space;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import static com.qksoft.advertisemanager.Advertisement.InitializeAdmobSdk;
-import static com.qksoft.advertisemanager.FacebookAdvertiseManager.InitializeFacebookSdk;
+import com.qksoft.advertisemanager.admob.InitializeAdmobSdk;
+import com.qksoft.advertisemanager.admob.ShowAdmobSplashInterstatial;
+import com.qksoft.advertisemanager.facebook.FacebookAdvertiseManager;
+import com.qksoft.advertisemanager.facebook.InitiaizeFacebookSdk;
+import com.qksoft.advertisemanager.facebook.ShowFacebookSplashInterstatial;
+
+import static com.qksoft.advertisemanager.facebook.FacebookAdvertiseManager.InitializeFacebookSdk;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -15,26 +22,17 @@ public class SplashActivity extends AppCompatActivity {
     String test_Interstatial_Id = "ca-app-pub-3940256099942544/1033173712";
     String facebook_Test_id = "IMG_16_9_LINK#YOUR_PLACEMENT_ID";
     String native_test_id = "ca-app-pub-3940256099942544/2247696110";
-
-
-
-
-    
-
+    Context context = SplashActivity.this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        InitializeAdmobSdk(SplashActivity.this,appId);
-        InitializeFacebookSdk(SplashActivity.this);
+       new InitializeAdmobSdk(SplashActivity.this,appId);
+       new InitiaizeFacebookSdk(context);
 
-        Advertisement advertisement = new Advertisement(SplashActivity.this);
-       // advertisement.showSplashInterstatial(false,test_Interstatial_Id,new Intent(SplashActivity.this,MainActivity.class));
-
-        FacebookAdvertiseManager facebookAdvertiseManager = new FacebookAdvertiseManager(SplashActivity.this);
-        facebookAdvertiseManager.showSplashInterstatial(false,facebook_Test_id,new Intent(SplashActivity.this,MainActivity.class));
-
+     //   new ShowAdmobSplashInterstatial(context,test_Interstatial_Id,new Intent(context, MainActivity.class));
+        new ShowFacebookSplashInterstatial(context,facebook_Test_id,new Intent(context,MainActivity.class));
 
     }
 
