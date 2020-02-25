@@ -9,7 +9,6 @@ import com.facebook.ads.AdError;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
 
-import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ShowFacebookSplashInterstatial {
 

@@ -8,6 +8,20 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="50dp"
+        >
+
+        <include layout="@layout/native_ad_unit"
+            android:id="@+id/native_ad_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:paddingBottom="5dp"/>
+
+    </ScrollView>
     <LinearLayout
         android:id="@+id/linerLayout"
         android:layout_width="match_parent"
@@ -29,17 +43,19 @@
         android:id="@+id/showfacebook"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Show Facebook Interstatial"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/fl_adplaceholder" />
 
     <Button
         android:id="@+id/showadmob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:visibility="gone"
         android:text="Show Admob Interstatial"
         app:layout_constraintEnd_toEndOf="@+id/showfacebook"
         app:layout_constraintStart_toStartOf="@+id/showfacebook"
