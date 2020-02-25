@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.qksoft.advertisemanager.admob;
+package com.photocompany.adsmanager.admob;
 
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;

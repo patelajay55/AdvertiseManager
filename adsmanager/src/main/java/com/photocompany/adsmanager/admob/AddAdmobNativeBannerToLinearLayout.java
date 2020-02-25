@@ -1,4 +1,4 @@
-package com.qksoft.advertisemanager.admob;
+package com.photocompany.adsmanager.admob;
 
 import android.content.Context;
 import android.widget.LinearLayout;
@@ -14,8 +14,7 @@ public class AddAdmobNativeBannerToLinearLayout {
                 .forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
                     @Override
                     public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
-                        NativeTemplateStyle styles = new
-                                NativeTemplateStyle.Builder().build();
+                        NativeTemplateStyle styles = new NativeTemplateStyle.Builder().build();
                         TemplateView template = new TemplateView(context,layoutToInflate);
                         template.setStyles(styles);
                         adContainer.addView(template);

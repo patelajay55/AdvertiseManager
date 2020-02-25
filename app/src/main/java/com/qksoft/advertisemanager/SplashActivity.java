@@ -7,11 +7,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.qksoft.advertisemanager.admob.InitializeAdmobSdk;
-
-import com.qksoft.advertisemanager.facebook.InitiaizeFacebookSdk;
-import com.qksoft.advertisemanager.facebook.ShowFacebookSplashInterstatial;
-
+import com.photocompany.adsmanager.admob.InitializeAdmobSdk;
+import com.photocompany.adsmanager.admob.ShowAdmobSplashInterstatial;
+import com.photocompany.adsmanager.facebook.InitiaizeFacebookSdk;
+import com.photocompany.adsmanager.facebook.ShowFacebookSplashInterstatial;
 
 
 public class SplashActivity extends AppCompatActivity {
@@ -26,11 +25,11 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-       new InitializeAdmobSdk(SplashActivity.this,appId);
-       new InitiaizeFacebookSdk(context);
+        new InitializeAdmobSdk(SplashActivity.this, appId);
+        new InitiaizeFacebookSdk(context);
 
-     //   new ShowAdmobSplashInterstatial(context,test_Interstatial_Id,new Intent(context, MainActivity.class));
-        new ShowFacebookSplashInterstatial(context,facebook_Test_id,new Intent(context,MainActivity.class));
+        new ShowAdmobSplashInterstatial(context,test_Interstatial_Id,new Intent(context, MainActivity.class));
+        new ShowFacebookSplashInterstatial(context, facebook_Test_id, new Intent(context, MainActivity.class));
 
     }
 

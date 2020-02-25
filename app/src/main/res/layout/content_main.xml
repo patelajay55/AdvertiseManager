@@ -8,20 +8,7 @@
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="50dp"
-        >
 
-        <include layout="@layout/native_ad_unit"
-            android:id="@+id/native_ad_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:color/white"
-            android:paddingBottom="5dp"/>
-
-    </ScrollView>
     <LinearLayout
         android:id="@+id/linerLayout"
         android:layout_width="match_parent"

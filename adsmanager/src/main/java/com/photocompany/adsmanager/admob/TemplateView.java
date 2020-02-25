@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package com.qksoft.advertisemanager.admob;
+package com.photocompany.adsmanager.admob;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -33,7 +33,7 @@ import com.google.android.gms.ads.formats.MediaView;
 import com.google.android.gms.ads.formats.NativeAd.Image;
 import com.google.android.gms.ads.formats.UnifiedNativeAd;
 import com.google.android.gms.ads.formats.UnifiedNativeAdView;
-import com.qksoft.advertisemanager.R;
+import com.photocompany.adsmanager.R;
 
 /** Base class for a template view. * */
 public class TemplateView extends FrameLayout {

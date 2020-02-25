@@ -1,4 +1,4 @@
-package com.qksoft.advertisemanager.admob;
+package com.photocompany.adsmanager.admob;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,6 +6,7 @@ import android.content.Intent;
 
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.InterstitialAd;
 
 public class LoadAdmobInterstatial {

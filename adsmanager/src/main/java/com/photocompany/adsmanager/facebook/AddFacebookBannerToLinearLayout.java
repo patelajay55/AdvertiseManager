@@ -1,4 +1,4 @@
-package com.qksoft.advertisemanager.facebook;
+package com.photocompany.adsmanager.facebook;
 
 import android.content.Context;
 import android.widget.LinearLayout;
@@ -11,7 +11,7 @@ public class AddFacebookBannerToLinearLayout {
 
     private AdView bannerAdView;
 
-    public  AddFacebookBannerToLinearLayout(Context context, String adsId,AdSize adSize, LinearLayout bannerAdContainer) {
+    public AddFacebookBannerToLinearLayout(Context context, String adsId, AdSize adSize, LinearLayout bannerAdContainer) {
         if (bannerAdView != null) {
             bannerAdView.destroy();
             bannerAdView = null;

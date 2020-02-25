@@ -1,4 +1,4 @@
-package com.qksoft.advertisemanager.facebook;
+package com.photocompany.adsmanager.facebook;
 
 import android.app.Activity;
 import android.content.Context;
@@ -9,16 +9,16 @@ import com.facebook.ads.AdError;
 import com.facebook.ads.InterstitialAd;
 import com.facebook.ads.InterstitialAdListener;
 
-
-public class ShowFacebookSplashInterstatial {
+public class LoadFacebookInterstatial {
 
     Context context;
-
-    public ShowFacebookSplashInterstatial(Context context, final String interStastitialId, final Intent nextActivity) {
+    public InterstitialAd mInterstitialAd;
+    public LoadFacebookInterstatial(Context context, String interStastitialId, Intent nextActivity) {
         this.context = context;
-        final InterstitialAd interstitialAd = new InterstitialAd(context, interStastitialId);
-        setAdListner(interstitialAd, nextActivity);
-        interstitialAd.loadAd();
+        InterstitialAd mInterstitialAd = new InterstitialAd(context, interStastitialId);
+        setAdListner(mInterstitialAd, nextActivity);
+        mInterstitialAd.loadAd();
+        this.mInterstitialAd = mInterstitialAd;
     }
 
     private void setAdListner(final InterstitialAd interstitialAd, final Intent nextActivity) {
@@ -29,17 +29,18 @@ public class ShowFacebookSplashInterstatial {
 
             @Override
             public void onInterstitialDismissed(Ad ad) {
+                interstitialAd.loadAd();
                 startNextActivity(nextActivity);
             }
 
             @Override
             public void onError(Ad ad, AdError adError) {
-                startNextActivity(nextActivity);
+
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                interstitialAd.show();
+
             }
 
             @Override
@@ -59,4 +60,15 @@ public class ShowFacebookSplashInterstatial {
             ((Activity) context).finish();
         }
     }
+    boolean isLoaded() {
+        if (mInterstitialAd.isAdLoaded())
+            return true;
+        return false;
+    }
+
+    public void show() {
+        if(isLoaded())
+            mInterstitialAd.show();
+    }
+
 }

@@ -1,4 +1,4 @@
-package com.qksoft.advertisemanager.admob;
+package com.photocompany.adsmanager.admob;
 
 import android.app.Activity;
 import android.content.Context;

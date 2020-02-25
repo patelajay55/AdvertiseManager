@@ -1,11 +1,10 @@
-package com.qksoft.advertisemanager.facebook;
+package com.photocompany.adsmanager.facebook;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
@@ -16,7 +15,7 @@ import com.facebook.ads.NativeAd;
 import com.facebook.ads.NativeAdBase;
 import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdListener;
-import com.qksoft.advertisemanager.R;
+import com.photocompany.adsmanager.R;
 
 import java.util.ArrayList;
 import java.util.List;

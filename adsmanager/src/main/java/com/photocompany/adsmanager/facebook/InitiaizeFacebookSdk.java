@@ -1,4 +1,4 @@
-package com.qksoft.advertisemanager.facebook;
+package com.photocompany.adsmanager.facebook;
 
 import android.content.Context;
 
